@@ -1,74 +1,19 @@
-# 📘 Laporan Praktikum Pertemuan Ke - 5
+# 📘 Laporan Praktikum Pertemuan Ke-5
 
-🧑‍🎓 Naufal Maulana Saputra - 4523210083
+**Nama:** Reevan Azepha Islamy Iskandar  
+**NIM:** 4524210083  
+**Mata Kuliah:** Pemrograman Berbasis Web (PBW)
 
-# 🏫 Website SMP Mentari Ceria
+# 🏫 LaraPress — Website Informasi
 
-Aplikasi website sekolah berbasis Laravel yang menampilkan informasi kegiatan sekolah dan fitur buku tamu digital untuk SMP Mentari Ceria.
+LaraPress adalah aplikasi website berbasis Laravel yang dikembangkan sebagai proyek praktikum Pemrograman Berbasis Web. Website ini menyediakan beberapa halaman informasi, yaitu halaman utama, halaman tentang kami, dan halaman kontak. Aplikasi dirancang dengan tampilan modern, navigasi sederhana, serta desain responsif agar nyaman digunakan oleh pengunjung.
 
 <p align="center">
   <img src="https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 8.2">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel 12">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 4">
   <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
 </p>
-
-## Instalasi
-
-### 1. Clone Repository
-
-```bash
-git clone https://github.com/adiwp/pbw.git
-cd smpmentari
-```
-
-### 2. Install Dependencies
-
-```bash
-# Install PHP dependencies
-composer install
-
-# Install Node dependencies
-npm install
-```
-
-### 3. Setup Environment
-
-```bash
-# Copy file .env
-cp .env.example .env
-
-# Generate application key
-php artisan key:generate
-```
-
-### 4. Setup Database
-
-```bash
-# Jalankan migrasi
-php artisan migrate
-```
-
-### 5. Build Assets
-
-```bash
-# Development
-npm run dev
-
-# Production
-npm run build
-```
-
-### 6. Jalankan Aplikasi
-
-```bash
-# Menggunakan built-in server
-php artisan serve
-
-# Atau menggunakan composer script (recommended)
-composer dev
-```
-
-Aplikasi akan berjalan di: `http://localhost:8000`
 
 ## 📋 Daftar Isi
 
@@ -78,85 +23,278 @@ Aplikasi akan berjalan di: `http://localhost:8000`
 - [Persyaratan Sistem](#-persyaratan-sistem)
 - [Instalasi](#-instalasi)
 - [Penggunaan](#-penggunaan)
-- [Struktur Database](#-struktur-database)
 - [Struktur Project](#-struktur-project)
 - [Pengembangan](#-pengembangan)
 - [Testing](#-testing)
-- [Lisensi](#-lisensi)
+- [Penutup](#-penutup)
 
 ## 🎯 Tentang Aplikasi
 
-Website SMP Mentari Ceria adalah aplikasi web sederhana yang dibangun dengan Laravel 12 untuk menampilkan informasi dan kegiatan sekolah. Aplikasi ini dilengkapi dengan fitur buku tamu digital yang memungkinkan pengunjung meninggalkan pesan dan kesan mereka.
+LaraPress merupakan website informasi sederhana yang dibangun menggunakan framework Laravel 12 dan bahasa pemrograman PHP. Proyek ini bertujuan untuk menerapkan konsep dasar pengembangan aplikasi web, mulai dari pengaturan routing, pembuatan halaman menggunakan Blade Template, pengelolaan aset frontend, hingga menjalankan aplikasi melalui server lokal.
 
-### Fitur Halaman:
+Website ini menggunakan desain bernuansa ungu dengan tata letak yang sederhana dan navigasi ant halaman untuk memudahkan pengunjung mengakses informasi.
 
-1. **Halaman Home** - Menampilkan kegiatan-kegiatan terbaru sekolah
-2. **Buku Tamu** - Formulir interaktif untuk pengunjung meninggalkan pesan
+### Halaman Website
+
+1. **Halaman Home** — Halaman utama yang berisi sambutan dan informasi pengenalan website.
+2. **Halaman Tentang Kami** — Menampilkan informasi mengenai website dan bagian-bagian pendukungnya.
+3. **Halaman Kontak** — Menyediakan halaman informasi kontak yang dapat digunakan pengunjung untuk mengenal informasi kontak yang ditampilkan pada website.
 
 ## ✨ Fitur Utama
 
-- ✅ **Tampilan Kegiatan Sekolah** - Showcase kegiatan terbaru dengan card design
-- ✅ **Buku Tamu Digital** - Pengunjung dapat meninggalkan pesan
-- ✅ **Form Validasi** - Validasi input untuk nama, email, dan pesan
-- ✅ **Real-time Feedback** - Notifikasi sukses/error setelah submit
-- ✅ **Responsive Design** - Tampilan optimal di semua device
-- ✅ **Timestamp Relatif** - Menampilkan waktu pesan (e.g., "2 jam yang lalu")
-- ✅ **Modern UI/UX** - Desain clean dengan Tailwind CSS
+- 🏠 **Halaman Utama** — Menampilkan informasi pengenalan website.
+- ℹ️ **Tentang Kami** — Menyediakan informasi mengenai website.
+- 📞 **Halaman Kontak** — Menampilkan informasi kontak.
+- 🧭 **Navigasi Antarhalaman** — Memudahkan pengunjung berpindah dari satu halaman ke halaman lainnya.
+- 🎨 **Modern UI/UX** — Menggunakan kombinasi warna ungu, kartu informasi, dan tata letak yang rapi.
+- 📱 **Desain Responsif** — Tata letak dirancang agar dapat menyesuaikan ukuran layar.
+- ⚙️ **Laravel Routing** — Mengatur alamat URL untuk setiap halaman.
+- 🗄️ **Dukungan Database MySQL** — Menyediakan konfigurasi database untuk pengembangan lokal.
 
 ## 🛠️ Tech Stack
 
 ### Backend
-- **Laravel** 12.x - PHP Framework
-- **PHP** ^8.2 - Programming Language
-- **SQLite** - Database (Development)
-- **Eloquent ORM** - Database Management
+
+- **PHP 8.2+** — Bahasa pemrograman backend.
+- **Laravel 12.x** — Framework untuk pengembangan aplikasi web.
+- **Eloquent ORM** — Fasilitas Laravel untuk berinteraksi dengan database.
 
 ### Frontend
-- **Blade Templates** - Template Engine
-- **Tailwind CSS** 4.0 - CSS Framework
-- **Vite** 7.0 - Asset Bundler & HMR
-- **Axios** - HTTP Client
+
+- **Blade Template** — Template engine bawaan Laravel.
+- **Tailwind CSS 4.x** — Framework CSS untuk styling antarmuka.
+- **Vite 7.x** — Build tool untuk pengelolaan aset frontend.
+- **JavaScript** — Mendukung kebutuhan interaksi frontend.
+
+### Database
+
+- **MySQL** — Database relasional yang dikonfigurasi untuk lingkungan pengembangan.
 
 ### Development Tools
-- **Laravel Sail** - Docker Development Environment
-- **Pest PHP** - Testing Framework
-- **Laravel Pint** - Code Style Fixer
-- **Concurrently** - Multi-command Runner
 
-## 📸 Hasil Screenshot Tampilan Website SMP Mentari
+- **Composer** — Pengelola dependensi PHP.
+- **Node.js dan npm** — Pengelola dependensi serta proses build frontend.
+- **PHP Artisan** — CLI untuk menjalankan berbagai perintah Laravel.
+- **PHPUnit** — Framework pengujian yang tersedia dalam konfigurasi proyek.
 
-### Halaman Home
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a64d64a0-c13f-4f85-b745-ca34a580c4bc" />
+## 💻 Persyaratan Sistem
 
-### Halaman Buku Tamu
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fc71c127-20ae-4606-9063-73d93efc70eb" />
+Pastikan perangkat sudah memiliki perangkat lunak berikut sebelum menjalankan aplikasi:
 
-### Halaman Register
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/425f065c-c92d-47e8-95b2-c27041a9b905" />
+- PHP versi 8.2 atau lebih baru.
+- Composer.
+- Node.js dan npm.
+- Git (jika melakukan clone repository).
+- SQLite, jika menggunakan database SQLite.
 
-### Halaman Login
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/216e71f2-a8bc-46f5-9af4-9f48c943a1fb" />
+Periksa instalasi melalui terminal:
 
-### Halaman Dashboard
+```bash
+php -v
+composer -V
+node -v
+npm -v
+git --version
+```
 
-Dashboard di akses ketika sudah login dan bisa mengatur atau pusat kendali dari website SMP Mentari
+## 🚀 Instalasi
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d7cc61dc-9829-4b7c-b6fe-8f0ca5219578" />
+### 1. Clone Repository
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f5ad41b2-4b7e-4a5f-84fd-ee30bff50e25" />
+Ganti URL berikut dengan URL repository GitHub milik kamu.
 
-Kendali atau mengelola kegiatan SMP Mentari
+```bash
+git clone https://github.com/USERNAME/NAMA-REPOSITORY.git
+```
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8cb3d83f-d7ef-435a-8eca-88d56d8b293a" />
+Masuk ke folder proyek Laravel:
 
-Kelola Buku Tamu
+```bash
+cd NAMA-REPOSITORY/LaraPress
+```
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/28af5ada-efb2-4f30-8b79-9ca7e41ea285" />
+Sesuaikan nama folder dengan struktur repository yang sudah diunduh.
 
-Konfigurasi tampilan Home Kegiatan per page dengan default nya 6 (Bisa diubah sesuai keinginan)
+### 2. Install Dependencies
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c90e5fe0-69c9-4137-8112-a0101aef31d7" />
+Install dependensi PHP menggunakan Composer:
+
+```bash
+composer install
+```
+
+Install dependensi frontend menggunakan npm:
+
+```bash
+npm install
+```
+
+### 3. Setup Environment
+
+Salin file konfigurasi environment:
+
+```bash
+cp .env.example .env
+```
+
+Jika menggunakan Windows Command Prompt dan perintah `cp` tidak tersedia, gunakan:
+
+```cmd
+copy .env.example .env
+```
+
+Generate application key:
+
+```bash
+php artisan key:generate
+```
+
+### 4. Setup Database
+
+Pastikan konfigurasi database pada file `.env` sesuai dengan database yang digunakan. Untuk SQLite, konfigurasi dapat menggunakan:
+
+```env
+DB_CONNECTION=sqlite
+```
+
+Pastikan file database tersedia pada lokasi `database/database.sqlite`. Jika belum tersedia, buat file tersebut terlebih dahulu.
+
+Jalankan migrasi database:
+
+```bash
+php artisan migrate
+```
+
+### 5. Build Assets
+
+Untuk menjalankan proses pengembangan frontend:
+
+```bash
+npm run dev
+```
+
+Untuk membangun aset frontend versi produksi:
+
+```bash
+npm run build
+```
+
+### 6. Jalankan Aplikasi
+
+Buka terminal dan jalankan:
+
+```bash
+php artisan serve
+```
+
+Aplikasi dapat diakses melalui alamat:
+
+**http://127.0.0.1:8000**
+
+Jika ingin menjalankan server Laravel dan Vite secara bersamaan, buka dua terminal terpisah. Jalankan `php artisan serve` pada terminal pertama dan `npm run dev` pada terminal kedua.
+
+## 🌐 Penggunaan
+
+Setelah aplikasi berhasil dijalankan, buka browser dan kunjungi alamat berikut:
+
+| Halaman | URL |
+|---|---|
+| Home | `http://127.0.0.1:8000/` |
+| Tentang Kami | `http://127.0.0.1:8000/tentang-kami` |
+| Kontak | `http://127.0.0.1:8000/kontak` |
+
+Pengunjung dapat membuka setiap halaman melalui navigasi yang tersedia pada website.
+
+## 📂 Struktur Project
+
+Berikut struktur direktori utama proyek LaraPress:
+
+```text
+LaraPress/
+├── app/
+│   ├── Http/
+│   │   └── Controllers/
+│   ├── Models/
+│   └── Providers/
+├── bootstrap/
+├── config/
+├── database/
+│   ├── factories/
+│   ├── migrations/
+│   ├── seeders/
+│   └── database.sqlite
+├── public/
+├── resources/
+│   ├── css/
+│   ├── js/
+│   └── views/
+│       ├── welcome.blade.php
+│       ├── about.blade.php
+│       └── kontak.blade.php
+├── routes/
+│   ├── web.php
+│   └── console.php
+├── tests/
+├── .env.example
+├── artisan
+├── composer.json
+├── package.json
+└── vite.config.js
+```
+
+**Keterangan direktori:**
+
+- `app/` — Berisi komponen utama aplikasi Laravel.
+- `app/Models/` — Berisi model untuk merepresentasikan data.
+- `app/Http/Controllers/` — Lokasi controller untuk menangani permintaan HTTP.
+- `resources/views/` — Berisi halaman website menggunakan Blade Template.
+- `resources/css/` dan `resources/js/` — Berisi aset frontend.
+- `routes/web.php` — Mendefinisikan rute halaman website.
+- `database/` — Berisi file database, migrasi, factory, dan seeder.
+- `public/` — Direktori publik yang menjadi titik masuk aplikasi web.
+- `tests/` — Lokasi pengujian aplikasi.
+
+## 🧑‍💻 Pengembangan
+
+Proyek ini dapat dikembangkan lebih lanjut dengan menambahkan beberapa fitur, seperti:
+
+- Formulir kontak yang dapat menyimpan pesan pengunjung.
+- Halaman admin untuk mengelola konten website.
+- Sistem login dan autentikasi pengguna.
+- Pengelolaan informasi website melalui database.
+- Validasi formulir dan penanganan kesalahan.
+- Pengujian otomatis untuk memastikan fungsi aplikasi berjalan dengan baik.
+
+Pengembangan selanjutnya dapat dilakukan dengan memanfaatkan routing, controller, model, migration, dan Blade Template yang disediakan Laravel.
+
+## 🧪 Testing
+
+Laravel menyediakan fasilitas pengujian otomatis yang dapat digunakan untuk memeriksa fungsi aplikasi.
+
+Untuk menjalankan pengujian:
+
+```bash
+php artisan test
+```
+
+Pengujian dapat dikembangkan untuk memeriksa:
+
+- Akses halaman Home.
+- Akses halaman Tentang Kami.
+- Akses halaman Kontak.
+- Respons aplikasi terhadap URL yang tidak ditemukan.
+- Validasi dan fungsi tambahan apabila fitur baru sudah diterapkan.
+
+Hasil pengujian perlu diperiksa setelah perintah dijalankan untuk memastikan aplikasi berjalan sesuai harapan.
+
+## 📄 Lisensi
+
+Proyek ini dibuat untuk keperluan pembelajaran dan praktikum Pemrograman Berbasis Web. Penggunaan dan distribusi kode mengikuti ketentuan lisensi yang ditetapkan pada repository.
+
+---
 
 <p align="center">
-Made with ❤️ for SMP Mentari Ceria
+  <b>Dibuat dengan ❤️ menggunakan Laravel</b>
+  <br>
+  <i>Proyek Praktikum Pemrograman Berbasis Web</i>
 </p>
