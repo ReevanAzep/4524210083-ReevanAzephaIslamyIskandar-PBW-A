@@ -1,85 +1,162 @@
-<?php
-// biodata.php
-function statusKeaktifan(int $semester): string {
-    if ($semester >= 5) return 'Aktif - Tingkat Akhir / Lanjutan';
-    return 'Aktif - Tingkat Dasar';
-}
+# 📘 Laporan Praktikum Pertemuan Ke - 5
 
-$mahasiswa = [
-    'nim' => '4524210083',
-    'nama' => 'Reevan Azepha Islamy Iskandar',
-    'prodi' => 'Pemrograman Berbasis Web (Installasi Pengenalan PHP Dasar dan OOP PHP)',
-    'semester' => 5,
-    'status_projek' => 'Laravel 12 & Tailwind CSS',
-];
-?>
+🧑‍🎓 Naufal Maulana Saputra - 4523210083
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biodata Pengembang - SMP Mentari Ceria</title>
-    <!-- Mengadopsi style modern Tailwind-like -->
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 450px;
-        }
-        h1 {
-            font-size: 1.5rem;
-            color: #0f172a;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #38b2ac;
-            padding-bottom: 0.5rem;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 1.5rem 0;
-        }
-        li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #e2e8f0;
-            font-size: 0.95rem;
-        }
-        li:last-child {
-            border-bottom: none;
-        }
-        .badge {
-            display: inline-block;
-            background-color: #38b2ac;
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <h1>Profil Pengembang Website</h1>
-        <ul>
-            <?php foreach ($mahasiswa as $kunci => $nilai): ?>
-                <li><strong><?= ucwords(str_replace('_', ' ', $kunci)) ?>:</strong> <?= htmlspecialchars((string)$nilai) ?></li>
-            <?php endforeach; ?>
-        </ul>
-        <p>Status Akademik: <span class="badge"><?= statusKeaktifan($mahasiswa['semester']) ?></span></p>
-    </div>
-</body>
-</html>
+# 🏫 Website SMP Mentari Ceria
+
+Aplikasi website sekolah berbasis Laravel yang menampilkan informasi kegiatan sekolah dan fitur buku tamu digital untuk SMP Mentari Ceria.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 8.2">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
+</p>
+
+## Instalasi
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/adiwp/pbw.git
+cd smpmentari
+```
+
+### 2. Install Dependencies
+
+```bash
+# Install PHP dependencies
+composer install
+
+# Install Node dependencies
+npm install
+```
+
+### 3. Setup Environment
+
+```bash
+# Copy file .env
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+```
+
+### 4. Setup Database
+
+```bash
+# Jalankan migrasi
+php artisan migrate
+```
+
+### 5. Build Assets
+
+```bash
+# Development
+npm run dev
+
+# Production
+npm run build
+```
+
+### 6. Jalankan Aplikasi
+
+```bash
+# Menggunakan built-in server
+php artisan serve
+
+# Atau menggunakan composer script (recommended)
+composer dev
+```
+
+Aplikasi akan berjalan di: `http://localhost:8000`
+
+## 📋 Daftar Isi
+
+- [Tentang Aplikasi](#-tentang-aplikasi)
+- [Fitur Utama](#-fitur-utama)
+- [Tech Stack](#-tech-stack)
+- [Persyaratan Sistem](#-persyaratan-sistem)
+- [Instalasi](#-instalasi)
+- [Penggunaan](#-penggunaan)
+- [Struktur Database](#-struktur-database)
+- [Struktur Project](#-struktur-project)
+- [Pengembangan](#-pengembangan)
+- [Testing](#-testing)
+- [Lisensi](#-lisensi)
+
+## 🎯 Tentang Aplikasi
+
+Website SMP Mentari Ceria adalah aplikasi web sederhana yang dibangun dengan Laravel 12 untuk menampilkan informasi dan kegiatan sekolah. Aplikasi ini dilengkapi dengan fitur buku tamu digital yang memungkinkan pengunjung meninggalkan pesan dan kesan mereka.
+
+### Fitur Halaman:
+
+1. **Halaman Home** - Menampilkan kegiatan-kegiatan terbaru sekolah
+2. **Buku Tamu** - Formulir interaktif untuk pengunjung meninggalkan pesan
+
+## ✨ Fitur Utama
+
+- ✅ **Tampilan Kegiatan Sekolah** - Showcase kegiatan terbaru dengan card design
+- ✅ **Buku Tamu Digital** - Pengunjung dapat meninggalkan pesan
+- ✅ **Form Validasi** - Validasi input untuk nama, email, dan pesan
+- ✅ **Real-time Feedback** - Notifikasi sukses/error setelah submit
+- ✅ **Responsive Design** - Tampilan optimal di semua device
+- ✅ **Timestamp Relatif** - Menampilkan waktu pesan (e.g., "2 jam yang lalu")
+- ✅ **Modern UI/UX** - Desain clean dengan Tailwind CSS
+
+## 🛠️ Tech Stack
+
+### Backend
+- **Laravel** 12.x - PHP Framework
+- **PHP** ^8.2 - Programming Language
+- **SQLite** - Database (Development)
+- **Eloquent ORM** - Database Management
+
+### Frontend
+- **Blade Templates** - Template Engine
+- **Tailwind CSS** 4.0 - CSS Framework
+- **Vite** 7.0 - Asset Bundler & HMR
+- **Axios** - HTTP Client
+
+### Development Tools
+- **Laravel Sail** - Docker Development Environment
+- **Pest PHP** - Testing Framework
+- **Laravel Pint** - Code Style Fixer
+- **Concurrently** - Multi-command Runner
+
+## 📸 Hasil Screenshot Tampilan Website SMP Mentari
+
+### Halaman Home
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a64d64a0-c13f-4f85-b745-ca34a580c4bc" />
+
+### Halaman Buku Tamu
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fc71c127-20ae-4606-9063-73d93efc70eb" />
+
+### Halaman Register
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/425f065c-c92d-47e8-95b2-c27041a9b905" />
+
+### Halaman Login
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/216e71f2-a8bc-46f5-9af4-9f48c943a1fb" />
+
+### Halaman Dashboard
+
+Dashboard di akses ketika sudah login dan bisa mengatur atau pusat kendali dari website SMP Mentari
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d7cc61dc-9829-4b7c-b6fe-8f0ca5219578" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f5ad41b2-4b7e-4a5f-84fd-ee30bff50e25" />
+
+Kendali atau mengelola kegiatan SMP Mentari
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8cb3d83f-d7ef-435a-8eca-88d56d8b293a" />
+
+Kelola Buku Tamu
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/28af5ada-efb2-4f30-8b79-9ca7e41ea285" />
+
+Konfigurasi tampilan Home Kegiatan per page dengan default nya 6 (Bisa diubah sesuai keinginan)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c90e5fe0-69c9-4137-8112-a0101aef31d7" />
+
+<p align="center">
+Made with ❤️ for SMP Mentari Ceria
+</p>
