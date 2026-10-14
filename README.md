@@ -1,4 +1,4 @@
-# 📘 Laporan Praktikum Pertemuan Ke-5
+# 📘 Laporan Praktikum Pertemuan Ke-1 dan 2
 
 **Nama:** Reevan Azepha Islamy Iskandar  
 **NIM:** 4524210083  
